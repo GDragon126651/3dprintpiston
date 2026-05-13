@@ -1,0 +1,455 @@
+{
+  "source": {
+    "dataset": "Processing, microstructure, and mechanical property dataset for AlSi10Mg fabricated by laser powder bed fusion additive manufacturing",
+    "authors": "Qixiang Luo, Nancy Huang, Tianyi Fu, Jinying Wang, Dean L. Bartles, Timothy W. Simpson, Allison M. Beese",
+    "zenodo": "https://zenodo.org/records/10008435",
+    "data_article": "https://doi.org/10.1016/j.dib.2024.110130",
+    "license": "CC BY 4.0"
+  },
+  "model": {
+    "type": "inverse_distance_weighted_knn",
+    "k": 5,
+    "validation": "leave_one_out_cross_validation",
+    "features": [
+      "power_w",
+      "scan_speed_mm_s",
+      "hatch_spacing_mm",
+      "linear_energy_density_j_mm",
+      "volumetric_energy_density_j_mm3",
+      "modified_energy_density",
+      "power_speed_product"
+    ],
+    "targets": [
+      "ultimate_tensile_strength_mpa",
+      "yield_strength_mpa",
+      "elongation_to_fracture_pct",
+      "xct_porosity_pct",
+      "vickers_hardness_hv",
+      "youngs_modulus_gpa"
+    ]
+  },
+  "record_count": 60,
+  "metrics": {
+    "ultimate_tensile_strength_mpa": {
+      "r2": 0.6494424587266269,
+      "mae": 21.03841783355925,
+      "rmse": 29.795634949468315,
+      "bias": 2.055725152393781
+    },
+    "yield_strength_mpa": {
+      "r2": 0.6058348726066376,
+      "mae": 11.011154975109527,
+      "rmse": 14.499349545687602,
+      "bias": 1.0784535718715689
+    },
+    "elongation_to_fracture_pct": {
+      "r2": 0.5595192011067798,
+      "mae": 0.3438336990958841,
+      "rmse": 0.4841157289468768,
+      "bias": -0.006776501741982644
+    },
+    "xct_porosity_pct": {
+      "r2": 0.6196698583751726,
+      "mae": 1.1729875492301656,
+      "rmse": 1.8759448773045595,
+      "bias": -0.21575747254303906
+    },
+    "vickers_hardness_hv": {
+      "r2": 0.27546458617650715,
+      "mae": 6.140011616256163,
+      "rmse": 8.196147723149105,
+      "bias": 0.6009735508737033
+    },
+    "youngs_modulus_gpa": {
+      "r2": 0.6036951909395415,
+      "mae": 3.4138718422075107,
+      "rmse": 4.476048367681399,
+      "bias": -0.03610423382522896
+    }
+  },
+  "summaries": {
+    "power_w": {
+      "min": 60.0,
+      "mean": 287.5,
+      "max": 460.0
+    },
+    "scan_speed_mm_s": {
+      "min": 250.0,
+      "mean": 947.5,
+      "max": 3000.0
+    },
+    "hatch_spacing_mm": {
+      "min": 0.1,
+      "mean": 0.12333333333333334,
+      "max": 0.15
+    },
+    "linear_energy_density_j_mm": {
+      "min": 0.11851851851851852,
+      "mean": 0.465418060995442,
+      "max": 1.84
+    },
+    "volumetric_energy_density_j_mm3": {
+      "min": 19.75308641975309,
+      "mean": 64.602490423188,
+      "max": 306.6666666666667
+    },
+    "modified_energy_density": {
+      "min": 2.6832815729997477,
+      "mean": 10.762031765105455,
+      "max": 29.092954473549092
+    },
+    "power_speed_product": {
+      "min": 15.0,
+      "mean": 314.14166666666665,
+      "max": 1380.0
+    },
+    "ultimate_tensile_strength_mpa": {
+      "min": 183.5,
+      "mean": 335.8527777777778,
+      "max": 388.0
+    },
+    "yield_strength_mpa": {
+      "min": 149.5453010249982,
+      "mean": 207.75317201004103,
+      "max": 239.87892029645616
+    },
+    "elongation_to_fracture_pct": {
+      "min": 0.865,
+      "mean": 3.176083333333333,
+      "max": 4.516666666666667
+    },
+    "xct_porosity_pct": {
+      "min": 0.0446431074866218,
+      "mean": 1.9483836274934512,
+      "max": 14.4273745145821
+    },
+    "vickers_hardness_hv": {
+      "min": 78.43456186,
+      "mean": 114.12227147266667,
+      "max": 139.7580604
+    },
+    "youngs_modulus_gpa": {
+      "min": 51.333333333333336,
+      "mean": 65.38297886451605,
+      "max": 78.5
+    }
+  },
+  "correlations": {
+    "ultimate_tensile_strength_mpa": {
+      "power_w": 0.10630434527462433,
+      "scan_speed_mm_s": 0.23809411286632304,
+      "hatch_spacing_mm": -0.7725350428379234,
+      "linear_energy_density_j_mm": -0.1344799146911027,
+      "volumetric_energy_density_j_mm3": 0.0742323810213857,
+      "modified_energy_density": -0.07691483370213942,
+      "power_speed_product": 0.2213145846696992
+    },
+    "yield_strength_mpa": {
+      "power_w": 0.013652937282942996,
+      "scan_speed_mm_s": 0.2848098309056436,
+      "hatch_spacing_mm": -0.643866062853063,
+      "linear_energy_density_j_mm": -0.29071806493305946,
+      "volumetric_energy_density_j_mm3": -0.07476449252506251,
+      "modified_energy_density": -0.2402309664971308,
+      "power_speed_product": 0.24047581288876743
+    },
+    "elongation_to_fracture_pct": {
+      "power_w": 0.4586888851594953,
+      "scan_speed_mm_s": 0.06076880283509338,
+      "hatch_spacing_mm": -0.32404639781375005,
+      "linear_energy_density_j_mm": 0.35867999004256945,
+      "volumetric_energy_density_j_mm3": 0.3563435667099544,
+      "modified_energy_density": 0.47498167058929325,
+      "power_speed_product": 0.15344688209506818
+    },
+    "xct_porosity_pct": {
+      "power_w": -0.022359055174458388,
+      "scan_speed_mm_s": -0.2884714281302022,
+      "hatch_spacing_mm": 0.533392661028674,
+      "linear_energy_density_j_mm": 0.254920118299408,
+      "volumetric_energy_density_j_mm3": 0.0894447340409996,
+      "modified_energy_density": 0.21431492297999752,
+      "power_speed_product": -0.23116132794761765
+    },
+    "vickers_hardness_hv": {
+      "power_w": -0.2636829609765478,
+      "scan_speed_mm_s": 0.1817566126116816,
+      "hatch_spacing_mm": -0.2382048373927603,
+      "linear_energy_density_j_mm": -0.5368914117994023,
+      "volumetric_energy_density_j_mm3": -0.3756517454705161,
+      "modified_energy_density": -0.5180933225211648,
+      "power_speed_product": 0.05834933515772115
+    },
+    "youngs_modulus_gpa": {
+      "power_w": -0.04379855092184691,
+      "scan_speed_mm_s": 0.10502349101998147,
+      "hatch_spacing_mm": -0.7925785997169034,
+      "linear_energy_density_j_mm": 0.02418394279586256,
+      "volumetric_energy_density_j_mm3": 0.17774019947815384,
+      "modified_energy_density": -0.021634442196453184,
+      "power_speed_product": 0.05563982032417169
+    }
+  },
+  "top_predictions": [
+    {
+      "power_w": 200,
+      "scan_speed_mm_s": 450,
+      "hatch_spacing_mm": 0.1,
+      "layer_thickness_mm": 0.06,
+      "material_performance_score": 170.13613007869668,
+      "ultimate_tensile_strength_mpa": 383.3358945267841,
+      "yield_strength_mpa": 225.95532229187882,
+      "elongation_to_fracture_pct": 3.6665332302336493,
+      "xct_porosity_pct": 0.1423851501064614,
+      "vickers_hardness_hv": 117.48602084159,
+      "youngs_modulus_gpa": 75.13556508184782
+    },
+    {
+      "power_w": 220,
+      "scan_speed_mm_s": 500,
+      "hatch_spacing_mm": 0.1,
+      "layer_thickness_mm": 0.06,
+      "material_performance_score": 169.6622809765426,
+      "ultimate_tensile_strength_mpa": 382.33026697887095,
+      "yield_strength_mpa": 225.72777609219432,
+      "elongation_to_fracture_pct": 3.6500314194098955,
+      "xct_porosity_pct": 0.13825794821120926,
+      "vickers_hardness_hv": 117.46832779009499,
+      "youngs_modulus_gpa": 75.25254546381655
+    },
+    {
+      "power_w": 200,
+      "scan_speed_mm_s": 500,
+      "hatch_spacing_mm": 0.1,
+      "layer_thickness_mm": 0.06,
+      "material_performance_score": 169.4653736451597,
+      "ultimate_tensile_strength_mpa": 382.03518013237067,
+      "yield_strength_mpa": 225.6917485555186,
+      "elongation_to_fracture_pct": 3.639324815750109,
+      "xct_porosity_pct": 0.13916201684643675,
+      "vickers_hardness_hv": 117.7660703507195,
+      "youngs_modulus_gpa": 75.24193222908356
+    },
+    {
+      "power_w": 180,
+      "scan_speed_mm_s": 400,
+      "hatch_spacing_mm": 0.1,
+      "layer_thickness_mm": 0.06,
+      "material_performance_score": 169.38797624408406,
+      "ultimate_tensile_strength_mpa": 383.00589829975115,
+      "yield_strength_mpa": 225.59408944842434,
+      "elongation_to_fracture_pct": 3.6132248831245106,
+      "xct_porosity_pct": 0.1766136468963257,
+      "vickers_hardness_hv": 115.53745668733059,
+      "youngs_modulus_gpa": 74.21841211223563
+    },
+    {
+      "power_w": 220,
+      "scan_speed_mm_s": 550,
+      "hatch_spacing_mm": 0.1,
+      "layer_thickness_mm": 0.06,
+      "material_performance_score": 169.32048521924472,
+      "ultimate_tensile_strength_mpa": 381.75004702954857,
+      "yield_strength_mpa": 225.50650237323183,
+      "elongation_to_fracture_pct": 3.6333314957597205,
+      "xct_porosity_pct": 0.13809569798414745,
+      "vickers_hardness_hv": 117.55819110399366,
+      "youngs_modulus_gpa": 75.22392292179225
+    },
+    {
+      "power_w": 200,
+      "scan_speed_mm_s": 400,
+      "hatch_spacing_mm": 0.1,
+      "layer_thickness_mm": 0.06,
+      "material_performance_score": 169.30774821526697,
+      "ultimate_tensile_strength_mpa": 382.93679257669766,
+      "yield_strength_mpa": 225.1993464102015,
+      "elongation_to_fracture_pct": 3.615501166236621,
+      "xct_porosity_pct": 0.18749263386368914,
+      "vickers_hardness_hv": 114.58473690810325,
+      "youngs_modulus_gpa": 73.60312868320271
+    },
+    {
+      "power_w": 200,
+      "scan_speed_mm_s": 450,
+      "hatch_spacing_mm": 0.09,
+      "layer_thickness_mm": 0.06,
+      "material_performance_score": 169.1869940789117,
+      "ultimate_tensile_strength_mpa": 382.8532646622062,
+      "yield_strength_mpa": 225.34083094741007,
+      "elongation_to_fracture_pct": 3.606004860323914,
+      "xct_porosity_pct": 0.19026510069355557,
+      "vickers_hardness_hv": 114.4526407599749,
+      "youngs_modulus_gpa": 73.74096464520365
+    },
+    {
+      "power_w": 220,
+      "scan_speed_mm_s": 300,
+      "hatch_spacing_mm": 0.1,
+      "layer_thickness_mm": 0.06,
+      "material_performance_score": 169.16929393284428,
+      "ultimate_tensile_strength_mpa": 380.64771570978667,
+      "yield_strength_mpa": 223.03145343895525,
+      "elongation_to_fracture_pct": 3.7236142145400217,
+      "xct_porosity_pct": 0.20124851037586053,
+      "vickers_hardness_hv": 113.36234860616794,
+      "youngs_modulus_gpa": 71.75382800320486
+    },
+    {
+      "power_w": 220,
+      "scan_speed_mm_s": 450,
+      "hatch_spacing_mm": 0.1,
+      "layer_thickness_mm": 0.06,
+      "material_performance_score": 169.1552744056458,
+      "ultimate_tensile_strength_mpa": 382.17019512844917,
+      "yield_strength_mpa": 224.7782804975722,
+      "elongation_to_fracture_pct": 3.627986835998962,
+      "xct_porosity_pct": 0.18116384037632205,
+      "vickers_hardness_hv": 113.70056140602252,
+      "youngs_modulus_gpa": 74.32712058350907
+    },
+    {
+      "power_w": 200,
+      "scan_speed_mm_s": 400,
+      "hatch_spacing_mm": 0.11,
+      "layer_thickness_mm": 0.06,
+      "material_performance_score": 169.11777889749615,
+      "ultimate_tensile_strength_mpa": 382.81999714647515,
+      "yield_strength_mpa": 225.2353940222097,
+      "elongation_to_fracture_pct": 3.6023046560570564,
+      "xct_porosity_pct": 0.19468234788972097,
+      "vickers_hardness_hv": 114.12112801171394,
+      "youngs_modulus_gpa": 73.52963760067283
+    },
+    {
+      "power_w": 420,
+      "scan_speed_mm_s": 450,
+      "hatch_spacing_mm": 0.1,
+      "layer_thickness_mm": 0.06,
+      "material_performance_score": 169.04985988094163,
+      "ultimate_tensile_strength_mpa": 385.8095028465833,
+      "yield_strength_mpa": 236.75927758871725,
+      "elongation_to_fracture_pct": 3.531206526577101,
+      "xct_porosity_pct": 0.2949481169380116,
+      "vickers_hardness_hv": 121.86248026461595,
+      "youngs_modulus_gpa": 68.58551341925883
+    },
+    {
+      "power_w": 180,
+      "scan_speed_mm_s": 400,
+      "hatch_spacing_mm": 0.11,
+      "layer_thickness_mm": 0.06,
+      "material_performance_score": 169.00860280521053,
+      "ultimate_tensile_strength_mpa": 382.8023397833824,
+      "yield_strength_mpa": 225.4602252140806,
+      "elongation_to_fracture_pct": 3.588277933321264,
+      "xct_porosity_pct": 0.1942783549283147,
+      "vickers_hardness_hv": 114.5039750142605,
+      "youngs_modulus_gpa": 73.87294038906077
+    },
+    {
+      "power_w": 200,
+      "scan_speed_mm_s": 300,
+      "hatch_spacing_mm": 0.09,
+      "layer_thickness_mm": 0.06,
+      "material_performance_score": 168.97969416250805,
+      "ultimate_tensile_strength_mpa": 382.01757661668034,
+      "yield_strength_mpa": 222.77609808396664,
+      "elongation_to_fracture_pct": 3.6462932740701492,
+      "xct_porosity_pct": 0.22010887012425456,
+      "vickers_hardness_hv": 113.04982002458581,
+      "youngs_modulus_gpa": 70.90427078049379
+    },
+    {
+      "power_w": 180,
+      "scan_speed_mm_s": 350,
+      "hatch_spacing_mm": 0.1,
+      "layer_thickness_mm": 0.06,
+      "material_performance_score": 168.9617811424012,
+      "ultimate_tensile_strength_mpa": 383.07466580007764,
+      "yield_strength_mpa": 224.40481916482278,
+      "elongation_to_fracture_pct": 3.580130014484737,
+      "xct_porosity_pct": 0.20767965928931223,
+      "vickers_hardness_hv": 114.21744518577115,
+      "youngs_modulus_gpa": 72.48795884230906
+    },
+    {
+      "power_w": 240,
+      "scan_speed_mm_s": 300,
+      "hatch_spacing_mm": 0.1,
+      "layer_thickness_mm": 0.06,
+      "material_performance_score": 168.93696364163733,
+      "ultimate_tensile_strength_mpa": 379.21602713859215,
+      "yield_strength_mpa": 222.96969464911487,
+      "elongation_to_fracture_pct": 3.7468871158112704,
+      "xct_porosity_pct": 0.18141097736921197,
+      "vickers_hardness_hv": 113.43167701992374,
+      "youngs_modulus_gpa": 72.17049034225114
+    },
+    {
+      "power_w": 220,
+      "scan_speed_mm_s": 300,
+      "hatch_spacing_mm": 0.11,
+      "layer_thickness_mm": 0.06,
+      "material_performance_score": 168.93059777050857,
+      "ultimate_tensile_strength_mpa": 381.4509969621321,
+      "yield_strength_mpa": 223.37391425690677,
+      "elongation_to_fracture_pct": 3.6609491427337617,
+      "xct_porosity_pct": 0.21193620082904266,
+      "vickers_hardness_hv": 113.4852159624298,
+      "youngs_modulus_gpa": 71.7879548215034
+    },
+    {
+      "power_w": 180,
+      "scan_speed_mm_s": 400,
+      "hatch_spacing_mm": 0.09,
+      "layer_thickness_mm": 0.06,
+      "material_performance_score": 168.92984767021096,
+      "ultimate_tensile_strength_mpa": 382.8389046789261,
+      "yield_strength_mpa": 225.16935866198125,
+      "elongation_to_fracture_pct": 3.5809397906965375,
+      "xct_porosity_pct": 0.1999853245994098,
+      "vickers_hardness_hv": 114.12213862678918,
+      "youngs_modulus_gpa": 73.30388792859884
+    },
+    {
+      "power_w": 220,
+      "scan_speed_mm_s": 500,
+      "hatch_spacing_mm": 0.09,
+      "layer_thickness_mm": 0.06,
+      "material_performance_score": 168.92638165567914,
+      "ultimate_tensile_strength_mpa": 381.8183039012189,
+      "yield_strength_mpa": 223.9349000292234,
+      "elongation_to_fracture_pct": 3.6138841848692587,
+      "xct_porosity_pct": 0.17980647876224268,
+      "vickers_hardness_hv": 113.97437273457908,
+      "youngs_modulus_gpa": 74.5696634800697
+    },
+    {
+      "power_w": 200,
+      "scan_speed_mm_s": 400,
+      "hatch_spacing_mm": 0.09,
+      "layer_thickness_mm": 0.06,
+      "material_performance_score": 168.90081148229692,
+      "ultimate_tensile_strength_mpa": 382.83584873115905,
+      "yield_strength_mpa": 224.64818560309814,
+      "elongation_to_fracture_pct": 3.5866160230539963,
+      "xct_porosity_pct": 0.210725933503757,
+      "vickers_hardness_hv": 113.39729098169006,
+      "youngs_modulus_gpa": 72.68416721246578
+    },
+    {
+      "power_w": 220,
+      "scan_speed_mm_s": 450,
+      "hatch_spacing_mm": 0.11,
+      "layer_thickness_mm": 0.06,
+      "material_performance_score": 168.89543071367612,
+      "ultimate_tensile_strength_mpa": 381.83037901800697,
+      "yield_strength_mpa": 223.99625117291103,
+      "elongation_to_fracture_pct": 3.612771977745308,
+      "xct_porosity_pct": 0.18394071479572738,
+      "vickers_hardness_hv": 113.66147811290607,
+      "youngs_modulus_gpa": 74.41414947890922
+    }
+  ]
+}
