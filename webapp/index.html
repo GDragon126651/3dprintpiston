@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>3D Printed Piston Optimizer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">LPBF AlSi10Mg surrogate model</p>
+          <h1>3D Printed Piston Optimizer</h1>
+          <p class="lede">
+            A research-grade dashboard that predicts metal-print process windows, coupon-level
+            mechanical properties, piston concept performance, and relative cost.
+          </p>
+        </div>
+        <div class="hero-panel">
+          <span>Best value concept</span>
+          <strong id="bestConcept">Loading...</strong>
+          <small id="bestDetail"></small>
+        </div>
+      </section>
+
+      <section class="warning">
+        This is an engineering screening model trained on open AlSi10Mg LPBF coupon data.
+        It is not a validated engine durability model.
+      </section>
+
+      <section class="grid metrics" id="metrics"></section>
+
+      <section class="workbench">
+        <div class="controls">
+          <h2>Design Space</h2>
+          <label>
+            Laser power <output id="powerOut">260 W</output>
+            <input id="power" type="range" min="120" max="420" value="260" step="10" />
+          </label>
+          <label>
+            Scan speed <output id="speedOut">800 mm/s</output>
+            <input id="speed" type="range" min="300" max="1600" value="800" step="25" />
+          </label>
+          <label>
+            Hatch spacing <output id="hatchOut">0.10 mm</output>
+            <input id="hatch" type="range" min="0.08" max="0.15" value="0.10" step="0.005" />
+          </label>
+          <div class="prediction" id="prediction"></div>
+        </div>
+        <canvas id="map" width="760" height="520" aria-label="performance map"></canvas>
+      </section>
+
+      <section class="grid">
+        <article>
+          <h2>Top Concepts</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>P</th>
+                  <th>v</th>
+                  <th>h</th>
+                  <th>UTS</th>
+                  <th>Yield</th>
+                  <th>Porosity</th>
+                  <th>Cost</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody id="candidateRows"></tbody>
+            </table>
+          </div>
+        </article>
+        <article>
+          <h2>Feature Influence</h2>
+          <canvas id="corr" width="640" height="360" aria-label="correlation bars"></canvas>
+        </article>
+      </section>
+
+      <section class="source" id="source"></section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
